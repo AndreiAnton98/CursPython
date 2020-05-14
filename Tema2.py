@@ -66,7 +66,8 @@ def control_check(cnp):
     if c == 10:
         c = 1
     if c != int(cnp[-1]):
-        print('Print problema la cifra de control')
+        print(c)
+        print('Problema la cifra de control')
         return False
     else:
         return True

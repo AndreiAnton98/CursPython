@@ -1,17 +1,29 @@
 import random
-lista  = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+lista  = ['laptop', 'calculator', 'pix', 'mouse', 'tastatura', 'monitor', 'telefon', 'tableta', 'televizor']
 cuvant = random.choice(lista)
-lives = 8
+vieti = 8
+gasite = []
+gasite.append(cuvant[0])
+gasite.append(cuvant[len(cuvant) - 1])
 winner = False
-while lives > 0:
-    input_ = input("Introduceti cuvantul ")
-    if input_ == cuvant:
+while vieti > 0:
+    output = ''
+    for litera in cuvant:
+        if litera in gasite:
+            output += litera
+        else:
+            output += '_'
+    print(output)
+    litera = input('Introduceti litera: ')
+    gasite.append(litera)
+    if litera not in cuvant:
+        vieti -= 1
+    print(f'{vieti} vieti ramase')
+    if output == cuvant:
         print('You won')
         winner = True
         break
-    else:
-        lives -= 1
-        print(f'Wrong! {lives} remaining')
 if not winner:
     print('You lost')
+
 

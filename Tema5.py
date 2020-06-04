@@ -29,24 +29,11 @@ def user_input():
 def robot_input():
     global values
     global moves
-    if values[4] == '_':
-        values[4] = 'O'
-    elif values[0] == "_":
-        values[0] = "O"
-    elif values[2] == "_":
-        values[2] = "O"
-    elif values[6] == "_":
-        values[6] = "O"
-    elif values[8] == "_":
-        values[8] = "O"
-    elif values[1] == "_":
-        values[1] = "O"
-    elif values[3] == "_":
-        values[3] = "O"
-    elif values[5] == "_":
-        values[5] = "O"
-    else:
-        values[7] = "O"
+    choices = [4, 0, 2, 6, 8, 1, 3, 5]
+    for choice in choices:
+        if values[choice] == '_':
+            values[choice] = 'O'
+            break
     moves += 1
 
 

@@ -1,4 +1,5 @@
 def printing():
+    global values
     print(' ')
     print('---------')
     print(f"| {values[0]} {values[1]} {values[2]} |")
